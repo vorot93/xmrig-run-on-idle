@@ -1,0 +1,28 @@
+[package]
+name = "xmrig-run-on-idle"
+version = "1.0.0"
+edition = "2024"
+authors = ["Artem Vorotnikov <artem@vorotnikov.me>"]
+description = "Pause and resume XMRig mining based on GNOME desktop idle time"
+license = "AGPL-3.0-only"
+
+[dependencies]
+env_logger = { version = "0.11", default-features = false, features = [
+    "auto-color",
+    "humantime",
+] }
+anyhow = { version = "1", default-features = false }
+clap = { version = "4", features = ["derive"] }
+jsonrpsee = { version = "0.26", default-features = false, features = [
+    "http-client",
+    "macros",
+] }
+log = { version = "0.4", default-features = false }
+tokio = { version = "1", default-features = false, features = [
+    "rt",
+    "macros",
+    "time",
+] }
+tower = { version = "0.5", default-features = false }
+tower-http = { version = "0.6", default-features = false, features = ["auth"] }
+zbus = { version = "5", default-features = false, features = ["tokio"] }
